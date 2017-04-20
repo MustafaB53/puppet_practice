@@ -14,7 +14,7 @@ class cron-puppet {
         minute  => '*/30',
         require => File['post-hook'],
     }
-    file { 'post-hook':
+    file { 'new_test_file':
         ensure  => file,
         path    => '/var/lib/puppet_practice.txt',
         content  => 'This is puppet practice test file',
