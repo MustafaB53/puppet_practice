@@ -14,4 +14,12 @@ class cron-puppet {
         minute  => '*/30',
         require => File['post-hook'],
     }
+    file { 'post-hook':
+        ensure  => file,
+        path    => '/var/lib/puppet_practice.txt',
+        content  => 'This is puppet practice test file',
+        mode    => 0755,
+        owner   => root,
+        group   => root,
+    }
 }
